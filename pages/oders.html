@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruhuna Science Canteen</title>
+  <link rel="stylesheet" href="../css/orders.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand"><span class="brand-icon">🍽️</span><div><strong>Ruhuna Science Canteen</strong><small>Faculty of Science • University of Ruhuna</small></div></div>
+    <nav>
+      <button class="nav-btn" data-page="customize">Customize Meal</button>
+      <button class="nav-btn active" data-page="token">Pickup Token</button>
+      <button class="nav-btn" data-page="orders">Order History</button>
+    </nav>
+    <div class="user"><span class="avatar">RC</span><span>SC/2023/13482</span></div>
+  </header>
+
+  <main>
+    <!-- PAGE 3: CUSTOMIZE MEAL -->
+    <section class="page" id="customize">
+      <div class="page-heading"><span class="eyebrow">PAGE 03</span><h1>Customize Your Meal</h1><p>Choose your preferred rice and extra add-ons.</p></div>
+      <div class="custom-card">
+        <div class="custom-top"><div><span class="tag">CUSTOMIZE MEAL</span><h2>Rice &amp; Curry — Fish (Ambul Thiyal)</h2></div><span class="food-emoji">🍛</span></div>
+        <div class="custom-content">
+          <div class="food-info"><div class="food-picture">🍛</div><p>Traditional Sri Lankan rice and curry with spiced fish ambul thiyal, tempered dhal, potato curry and fresh gotukola sambol.</p>
+            <label for="note">Kitchen Preparation Note</label><textarea id="note" placeholder="e.g. Less spicy gravy, extra dhal..."></textarea>
+          </div>
+          <div class="options">
+            <h3>1. Choose Rice Base</h3>
+            <label class="option"><span>White Nadu Rice</span><input type="radio" name="rice" value="White Nadu Rice" checked></label>
+            <label class="option"><span>Red Kekulu Rice</span><input type="radio" name="rice" value="Red Kekulu Rice"></label>
+            <h3>2. Extra Add-ons</h3>
+            <label class="option"><span>Boiled / Fried Egg <b>+Rs. 60</b></span><input class="addon" type="checkbox" value="60"></label>
+            <label class="option"><span>Papadam &amp; Fried Chilies <b>+Rs. 30</b></span><input class="addon" type="checkbox" value="30"></label>
+            <label class="option"><span>Pol Sambol Portion <b>+Rs. 40</b></span><input class="addon" type="checkbox" value="40"></label>
+          </div>
+        </div>
+        <div class="custom-bottom"><div class="quantity"><button id="minus">−</button><strong id="quantity">1</strong><button id="plus">+</button></div><button class="primary" id="addOrder">Add to Pre-Order • Rs. 220.00</button></div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: DIGITAL PICKUP TOKEN -->
+    <section class="page active" id="token">
+      <div class="page-heading"><span class="eyebrow">PAGE 04</span><h1>Your Digital Pickup Token</h1><p>Show this token at the Science Canteen Express Counter.</p></div>
+      <div class="token-layout">
+        <article class="panel token-card"><span class="tag">VERIFIED PICKUP TOKEN</span><h2>#RSC-104</h2>
+          <div class="fake-qr" aria-label="Decorative QR code"><div class="qr-pattern"></div></div>
+          <p class="muted">Present this QR on your phone or laptop at the Science Canteen Express Counter.</p><hr>
+          <div class="detail"><span>Student ID</span><strong>SC/2023/13482</strong></div>
+          <div class="detail"><span>Pickup Window</span><strong id="pickupTime">12:15 PM Today</strong></div>
+          <div class="detail"><span>Amount Due</span><strong class="green" id="amountDue">Rs. 570.00 (Cash)</strong></div>
+        </article>
+        <div class="right-column">
+          <article class="panel tracker"><div class="panel-title"><h2>Live Kitchen Preparation Tracker</h2><span class="status">In Kitchen</span></div>
+            <div class="steps"><div class="step done"><span>✓</span><b>Order Received</b><small>11:28 AM</small></div><div class="step current"><span>2</span><b>Preparing Meal</b><small>Est. 8 mins</small></div><div class="step"><span>3</span><b>Ready for Pickup</b><small>12:15 PM</small></div></div>
+          </article>
+          <article class="panel summary"><h2>Order Summary</h2><div class="detail"><span>1× Chicken Fried Rice</span><strong>Rs. 350.00</strong></div><div class="detail"><span>1× Rice &amp; Curry (Fish)</span><strong>Rs. 220.00</strong></div><hr><div class="detail total"><strong>Total Payable at Counter</strong><strong>Rs. 570.00</strong></div>
+            <div class="actions"><button class="outline" data-page="orders">View Order History</button><button class="primary" id="receiptBtn">Download Receipt</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: ORDER HISTORY -->
+    <section class="page" id="orders">
+      <div class="page-heading heading-row"><div><span class="eyebrow">PAGE 05</span><h1>My Pre-Orders</h1><p>Track active tokens and reorder your favourite meals.</p></div><button class="primary" data-page="customize">+ New Pre-Order</button></div>
+      <div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Token ID</th><th>Date &amp; Pickup Slot</th><th>Ordered Meals</th><th>Payment</th><th>Total</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody><tr class="highlight"><td><strong>#RSC-104</strong></td><td>Today • 12:15 PM</td><td>1× Chicken Fried Rice,<br>1× Rice &amp; Curry (Fish)</td><td>Cash at Counter</td><td><strong>Rs. 570.00</strong></td><td><span class="tag">Preparing</span></td><td><button class="small-btn" data-page="token">View QR</button></td></tr>
+        <tr><td><strong>#RSC-089</strong></td><td>Yesterday • 12:30 PM</td><td>2× Vegetable Roti,<br>1× Plain Tea</td><td>Paid Online</td><td>Rs. 230.00</td><td><span class="completed">Completed</span></td><td><button class="small-btn light" data-reorder>Re-Order</button></td></tr>
+        <tr><td><strong>#RSC-072</strong></td><td>Nov 19 • 1:00 PM</td><td>1× Rice &amp; Curry (Veg),<br>1× Iced Coffee</td><td>Cash at Counter</td><td>Rs. 300.00</td><td><span class="completed">Completed</span></td><td><button class="small-btn light" data-reorder>Re-Order</button></td></tr></tbody></table></div></div>
+    </section>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="../js/orders.js"></script>
+</body>
+</html>
