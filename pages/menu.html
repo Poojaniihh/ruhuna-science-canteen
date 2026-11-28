@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Menu | Ruhuna Science Canteen</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+
+<body data-page="menu">
+
+    <!-- Shared Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="menu-workspace">
+
+        <!-- Left Menu Section -->
+        <section class="menu-main">
+
+            <!-- Today's Special -->
+            <section class="special">
+                <div>
+                    <span class="special-label">
+                         TODAY'S LUNCH SPECIAL
+                    </span>
+
+                    <h1>
+                        Chicken Fried Rice + Roast Chicken & Chili Paste
+                    </h1>
+
+                    <p>
+                        Freshly prepared for the 12:00 PM & 12:15 PM lecture break • Rs. 350.00
+                    </p>
+                </div>
+
+                <button class="btn btn-gold" id="specialAdd">
+                    + Add Special to Pre-Order
+                </button>
+            </section>
+
+            <!-- Categories and Filters -->
+            <div class="toolbar">
+
+                <div class="categories" id="categoryTabs">
+
+                    <button class="category active" data-category="All">
+                        All Meals
+                    </button>
+
+                    <button class="category" data-category="Breakfast">
+                        Breakfast
+                    </button>
+
+                    <button class="category" data-category="Lunch">
+                        Lunch
+                    </button>
+
+                    <button class="category" data-category="Short Eats">
+                        Short Eats
+                    </button>
+
+                    <button class="category" data-category="Beverages">
+                        Beverages
+                    </button>
+
+                </div>
+
+                <div class="filters">
+
+                    <label class="filter-chip">
+                        <input type="checkbox" id="availableOnly" checked>
+                        Available Only
+                    </label>
+
+                    <label class="filter-chip">
+                        <input type="checkbox" id="vegOnly">
+                        Veg Only
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search menu items..."
+                        aria-label="Search menu items"
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- Menu Information -->
+            <div class="menu-meta">
+                <span id="resultCount">0 items</span>
+                <span id="todayDate"></span>
+            </div>
+
+            <!-- Food Cards -->
+            <div class="food-grid" id="foodGrid"></div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" hidden>
+                <span>🍽️</span>
+                <h3>No meals found</h3>
+                <p>Try changing your search or filters.</p>
+            </div>
+
+        </section>
+
+        <!-- Right Cart Sidebar -->
+        <aside class="cart-sidebar" id="cart">
+
+            <div>
+
+                <div class="cart-heading">
+                    <h2>🛒 Your Pre-Order</h2>
+                    <span class="item-count" id="cartCount">
+                        0 items
+                    </span>
+                </div>
+
+                <!-- Cart Items -->
+                <div class="cart-items" id="cartItems"></div>
+
+                <!-- Pickup Options -->
+                <div class="cart-options">
+
+                    <div class="slot-heading">
+                        <strong>Pickup Time Slot</strong>
+                        <span>Express Counter</span>
+                    </div>
+
+                    <input
+                        type="hidden"
+                        id="pickupSlot"
+                        value="12:15 PM"
+                    >
+
+                    <div class="slot-grid">
+
+                        <button class="category"
+                                data-slot="12:00 PM"
+                                aria-pressed="false">
+                            12:00 PM
+                        </button>
+
+                        <button class="category selected"
+                                data-slot="12:15 PM"
+                                aria-pressed="true">
+                            12:15 PM
+                        </button>
+
+                        <button class="category"
+                                data-slot="12:30 PM"
+                                aria-pressed="false">
+                            12:30 PM
+                        </button>
+
+                        <button class="category"
+                                data-slot="1:00 PM"
+                                aria-pressed="false">
+                            1:00 PM
+                        </button>
+
+                    </div>
+
+                    <!-- Payment Options -->
+                    <fieldset>
+
+                        <legend>Payment Option</legend>
+
+                        <label class="payment-option">
+                            Pay Cash at Pickup Counter
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Cash at Pickup"
+                                checked
+                            >
+                        </label>
+
+                        <label class="payment-option">
+                            Online Card / LankaQR
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Online Payment"
+                            >
+                        </label>
+
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+            <!-- Cart Total -->
+            <div class="cart-total">
+
+                <div>
+                    <span>Subtotal</span>
+                    <span id="subtotal">Rs. 0.00</span>
+                </div>
+
+                <div>
+                    <span>University Portal Fee</span>
+                    <span class="free">Free</span>
+                </div>
+
+                <div class="grand-total">
+                    <strong>Total Payable</strong>
+                    <strong id="total">Rs. 0.00</strong>
+                </div>
+
+                <button
+                    class="btn btn-gold btn-checkout"
+                    id="checkoutBtn"
+                    disabled
+                >
+                    Confirm Pre-Order →
+                </button>
+
+                <small class="secure-note">
+                    🔒 Demo checkout · No real payment will be taken
+                </small>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/shared.js" defer></script>
+    <script src="../js/menu.js" defer></script>
+
+</body>
+</html>
